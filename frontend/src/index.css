@@ -1,0 +1,81 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.connect-form {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20%;
+  align-items: center;
+}
+
+.connect-form form {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.connect-form form input {
+  margin: 0.1rem 0;
+}
+
+.message-list {
+  height: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-form {
+  display: flex;
+  justify-content: center;
+}
+
+.message-form input {
+  margin: 0.1rem;
+  padding: 0.5rem;
+}
+
+.mines,
+.others {
+  padding: 1rem;
+  border-radius: 15px;
+  margin-top: 1em;
+}
+
+.mines {
+  background-color: rgb(46, 169, 46);
+  border: solid rgb(24, 109, 24) 1px;
+  margin-left: auto;
+  margin-left: 2rem;
+}
+
+.others {
+  background-color: lightgray;
+  border: solid gray 1px;
+  margin-right: auto;
+  margin-right: 2rem;
+}
