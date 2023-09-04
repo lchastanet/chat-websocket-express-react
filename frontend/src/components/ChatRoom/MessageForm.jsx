@@ -1,22 +1,22 @@
-import { useState } from "react";
+import { useState } from "react"
 
 function MessageForm({ socket, nickName }) {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("")
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     socket.emit("sendMessage", {
       id: socket.id,
       author: nickName,
       text: message,
-    });
+    })
 
-    setMessage("");
-  };
+    setMessage("")
+  }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="message-form" onSubmit={handleSubmit}>
       <input
         type="text"
         name="message"
@@ -27,7 +27,7 @@ function MessageForm({ socket, nickName }) {
       />
       <input type="submit" value="Envoyer" />
     </form>
-  );
+  )
 }
 
-export default MessageForm;
+export default MessageForm

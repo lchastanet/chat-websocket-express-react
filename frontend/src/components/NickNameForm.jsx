@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { useState } from "react"
 
 function NickNameForm({ setNickName }) {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState("")
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (input.length >= 3) {
-      setNickName(input);
+      setNickName(input)
     } else {
-      alert("Please choose a nickname !");
+      alert("Please choose a nickname !")
     }
-  };
+  }
 
   return (
     <div className="connect-form">
@@ -26,7 +26,7 @@ function NickNameForm({ setNickName }) {
         <input type="submit" value="Entrer" />
       </form>
     </div>
-  );
+  )
 }
 
-export default NickNameForm;
+export default NickNameForm

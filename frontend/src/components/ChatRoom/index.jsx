@@ -1,37 +1,32 @@
-import { useState, useEffect } from "react";
-import { io } from "socket.io-client";
-import MessageForm from "./MessageForm";
-import MessagesList from "./MessagesList";
+import { useState, useEffect } from "react"
+import { io } from "socket.io-client"
+import MessageForm from "./MessageForm"
+import MessagesList from "./MessagesList"
 
-function ChatRoom({ nickName, setNickName }) {
-  const [socket, setSocket] = useState(null);
+function ChatRoom({ nickName }) {
+  const [socket, setSocket] = useState(null)
 
   useEffect(() => {
-    const socket = io("http://localhost:8000");
+    const socket = io("http://localhost:8000")
 
-    setSocket(socket);
+    setSocket(socket)
 
     socket.on("connect", () => {
-      console.log("connection", socket.id);
-    });
+      console.log("connection", socket.id)
+    })
 
     return () => {
-      //socket.emit("disconnectUser", socket.id);
-      socket.off();
-    };
-  }, []);
+      socket.disconnect()
+      socket.off()
+    }
+  }, [])
 
   return (
-    <div>
+    <>
       <MessagesList socket={socket} />
       <MessageForm socket={socket} nickName={nickName} />{" "}
-      <input
-        type="button"
-        value="disconnect"
-        onClick={() => setNickName(null)}
-      />
-    </div>
-  );
+    </>
+  )
 }
 
-export default ChatRoom;
+export default ChatRoom

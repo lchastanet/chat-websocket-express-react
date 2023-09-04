@@ -18,9 +18,24 @@
 html,
 body,
 #root {
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > h1 {
+  margin-left: 1rem;
+}
+
+header > input {
+  margin-right: 1rem;
+  padding: 0.5rem 0.7rem;
 }
 
 .connect-form {
@@ -42,11 +57,9 @@ body,
 }
 
 .message-list {
-  height: 70%;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-direction: column;
+  margin: 1rem 15%;
 }
 
 .message-form {
@@ -67,7 +80,7 @@ body,
 }
 
 .mines {
-  background-color: rgb(46, 169, 46);
+  background-color: #56ca4d;
   border: solid rgb(24, 109, 24) 1px;
   margin-left: auto;
   margin-left: 2rem;
@@ -78,4 +91,16 @@ body,
   border: solid gray 1px;
   margin-right: auto;
   margin-right: 2rem;
+}
+
+.message-form {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  margin: 1rem;
+  width: 100%;
+}
+
+#message {
+  width: 70%;
 }

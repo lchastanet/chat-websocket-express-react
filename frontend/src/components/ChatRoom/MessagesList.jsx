@@ -1,15 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 
 function MessagesList({ socket }) {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([])
 
   useEffect(() => {
     if (socket) {
       socket.on("newMessage", (message) => {
-        setMessages([...messages, message]);
-      });
+        setMessages([...messages, message])
+      })
     }
-  }, [messages, socket]);
+  }, [messages, socket])
 
   return (
     <div className="message-list">
@@ -22,7 +22,7 @@ function MessagesList({ socket }) {
         </p>
       ))}
     </div>
-  );
+  )
 }
 
-export default MessagesList;
+export default MessagesList
