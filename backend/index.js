@@ -1,6 +1,7 @@
 const express = require("express")
 const http = require("http")
 const cors = require("cors")
+const { Server } = require("socket.io")
 
 const app = express()
 
@@ -10,7 +11,7 @@ app.use(cors())
 
 const port = parseInt(process.env.APP_PORT, 10) || 8000
 
-const io = require("socket.io")(server, { cors: { origin: "*" } })
+const io = new Server(server, { cors: { origin: "*" } })
 
 io.on("connection", (socket) => {
   console.log("New user: ", socket.id)
